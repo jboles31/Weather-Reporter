@@ -1,8 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import Display from './components/Display.jsx'
-// import Container from './components/subContainer.jsx'
+import Display from './components/Display.jsx'
+import Container from './components/Container.jsx'
 import $ from 'jquery'
+// import background from './images/sky-background.jpg'
+import Background from './images/sky-background.jpg'
+import style from './main.scss';
 
 class App extends React.Component{
   constructor(props) {
@@ -17,6 +20,7 @@ class App extends React.Component{
     $.ajax({
       method: 'GET',
       url: `/api/${param}`,
+      
       success: (data) => {
         this.setState({
           display: {
@@ -34,9 +38,13 @@ class App extends React.Component{
   render() {
     return (
       <div className="app-wrapper">
-        Weather Reporter
-        {/* <Container /> */}
-        {/* <Display />   */}
+        <div className='bg'>
+          <img className="background" src={Background} ></img>
+        </div>
+        <div className="comps-wrapper">
+          <Container />
+          <Display />
+        </div>  
         <button onClick={() => {this.search('Boston')}}></button>      
       </div>
     )
