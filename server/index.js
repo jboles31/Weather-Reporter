@@ -14,9 +14,8 @@ let options = {
 }
 
 app.get('/api/:city', (req, res) => {
-  console.log('req.params.city', req.params.city)
 
-  axios.get(`api.openweathermap.org/data/2.5/weather?id=524901&APPID=${process.env.API_KEY}&q=${req.params.city}`)
+  axios.get(`http://api.openweathermap.org/data/2.5/weather?q=Boston&APPID=${process.env.API_KEY}`)
   .then((data) => {
     console.log('DATA: ', data.data)
     res.send(data.data);

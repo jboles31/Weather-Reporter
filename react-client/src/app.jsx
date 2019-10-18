@@ -20,7 +20,6 @@ class App extends React.Component{
     $.ajax({
       method: 'GET',
       url: `/api/${param}`,
-      
       success: (data) => {
         this.setState({
           display: {
@@ -43,7 +42,7 @@ class App extends React.Component{
         </div>
         <div className="comps-wrapper">
           <Container />
-          <Display />
+          <Display search={this.search}/>
         </div>  
         <button onClick={() => {this.search('Boston')}}></button>      
       </div>

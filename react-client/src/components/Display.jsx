@@ -9,7 +9,7 @@ const Display = (props) => {
       </div>
       <div className='search'> 
         <input className='search-bar' type='search'></input>
-        <button type="submit" class="search-button">
+        <button type="submit" class="search-button" onClick={() => props.search('Boston')}>
         <i className="fa fa-search"></i>
      </button>
       </div>
