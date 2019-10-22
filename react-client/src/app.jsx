@@ -10,7 +10,9 @@ import style from './main.scss';
 class App extends React.Component{
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+
+    }
 
     this.search = this.search.bind(this)
   }
@@ -23,7 +25,7 @@ class App extends React.Component{
       success: (data) => {
         this.setState({
           display: {
-            city: data.location
+            city: data.name
           },
           showView: true,
         })

@@ -6,16 +6,9 @@ var app = express();
 
 app.use(express.static(__dirname + '/../react-client/dist'));
 
-let options = {
-  headers: {
-    'APPID': process.env.API_KEY,
-    'id': 524901
-  }
-}
-
 app.get('/api/:city', (req, res) => {
 
-  axios.get(`http://api.openweathermap.org/data/2.5/weather?q=Boston&APPID=${process.env.API_KEY}`)
+  axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${req.params.city}&APPID=${process.env.API_KEY}`)
   .then((data) => {
     console.log('DATA: ', data.data)
     res.send(data.data);

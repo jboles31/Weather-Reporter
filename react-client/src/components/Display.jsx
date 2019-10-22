@@ -1,15 +1,18 @@
 import React from 'react'
+import { useState } from 'react'
 
-const Display = (props) => {
+const Display = ( props ) => {
+
+  let [search, updateSearch] = useState('')
 
   return (
     <div className='display'>
       <div className='greeting'>
-        <i class="fa fa-globe"></i>
+        <i className="fa fa-globe"></i>
       </div>
       <div className='search'> 
-        <input className='search-bar' type='search'></input>
-        <button type="submit" class="search-button" onClick={() => props.search('Boston')}>
+        <input className='search-bar' type='search' onChange={(e) => updateSearch(e.target.value)}></input>
+        <button type="submit" class="search-button" onClick={() => props.search(search)}>
         <i className="fa fa-search"></i>
      </button>
       </div>
