@@ -9,7 +9,6 @@ A single page web app that displays the weather for a desired location. Built wi
 * [React.js](https://reactjs.org/)
 * [Express](https://expressjs.com)
 * [Node.js](https://nodejs.org/en/)
-* [*FILL IN DATABASE HERE*]()
 
 ### [App Structure](./LAYOUT.md)
 
