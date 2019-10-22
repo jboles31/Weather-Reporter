@@ -11,7 +11,9 @@ class App extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-
+      display: '',
+      showView: false,
+      cities: [],
     }
 
     this.search = this.search.bind(this)
@@ -23,12 +25,11 @@ class App extends React.Component{
       method: 'GET',
       url: `/api/${param}`,
       success: (data) => {
-        this.setState({
-          display: {
-            city: data.name
-          },
-          showView: true,
-        })
+        let copyState = this.state;
+        copyState.cities.push(data);
+        copyState.display = data.name;
+        copyState.showView = true;
+        this.setState(copyState)
       },
       error: (err) => {
         console.log('error on Client', err);
@@ -43,7 +44,7 @@ class App extends React.Component{
           <img className="background" src={Background} ></img>
         </div>
         <div className="comps-wrapper">
-          <Container />
+          <Container cities={this.state.cities}/>
           <Display search={this.search}/>
         </div>  
         <button onClick={() => {this.search('Boston')}}></button>      
