@@ -7,7 +7,7 @@ let convertFaren = (temp) => {
 
 const Display = ( props ) => {
 
-  if (props.view === false) {
+  if (props.view === false || true) {
   
     let [search, updateSearch] = useState('')
     
