@@ -45,7 +45,12 @@ class App extends React.Component{
         </div>
         <div className="comps-wrapper">
           <Container cities={this.state.cities}/>
-          <Display search={this.search}/>
+          <Display 
+            search={this.search} 
+            cities={this.state.cities} 
+            display={this.state.display}
+            view={this.state.showView}
+          />
         </div>  
         <button onClick={() => {this.search('Boston')}}></button>      
       </div>
