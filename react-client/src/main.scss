@@ -109,15 +109,31 @@ html, body {
       }
     }
 
-    .display-data {
+    .info-display {
       display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      align-content: space-between;
+      // justify-content: space-evenly;
+      // align-content: space-between;
       flex-direction: column;
       height: 85vh;
       width: 100%;
       z-index: 2;
+
+      .title {
+        display: flex;
+        height: 15%;
+        margin-left: 15%;
+        align-items: center;
+        font-size: 5vh;
+        color: grey;
+        opacity: .8;
+      }
+
+      .information {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: 85%;
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Display from './components/Display.jsx'
+import SearchDisplay from './components/SearchDisplay.jsx'
+import InfoDisplay from './components/InfoDisplay.jsx'
 import Container from './components/Container.jsx'
 import $ from 'jquery'
 // import background from './images/sky-background.jpg'
@@ -44,15 +45,22 @@ class App extends React.Component{
           <img className="background" src={Background} ></img>
         </div>
         <div className="comps-wrapper">
-          <Container cities={this.state.cities}/>
-          <Display 
-            search={this.search} 
-            cities={this.state.cities} 
-            display={this.state.display}
-            view={this.state.showView}
+          <Container 
+            cities={this.state.cities}
           />
-        </div>  
-        <button onClick={() => {this.search('Boston')}}></button>      
+          {this.state.showView ? 
+            (<InfoDisplay 
+              cities={this.state.cities}
+              cities={this.state.cities} 
+              display={this.state.display}
+              view={this.state.showView}
+            />)
+          :
+            (<SearchDisplay 
+              search={this.search} 
+            />)
+          }
+        </div>        
       </div>
     )
   }
