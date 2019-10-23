@@ -106,5 +106,16 @@ html, body {
         }
       }
     }
+
+    .display-data {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: space-between;
+      flex-direction: column;
+      height: 85vh;
+      width: 100%;
+      z-index: 2;
+    }
   }
 }
