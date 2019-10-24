@@ -1,12 +1,13 @@
 import React from 'react'
+import { WiRain, WiSunrise, WiSunset } from 'react-icons/wi'
 
 let convertFaren = (temp) => {
   return Math.round((((temp - 273.15) * 9)/ 5) + 32);
 }
 
-let convertTime = (time) => {
+let convertTime = (time, morning) => {
   let date = new Date(time * 1000)
-  let hours = date.getHours()
+  let hours = morning ? date.getHours() : (date.getHours() - 12);
   let mins = '0' + date.getMinutes()
   let seconds = '0' + date.getSeconds()
   return hours + ':' + mins.substr(-2) + ':' + seconds.substr(-2);
@@ -32,11 +33,15 @@ const InfoDisplay = ( props ) => {
         </div>
         <div className='sky'>
           <div className='sky-main'>{location.weather[0].main}</div>
+          {/* <div><WiRain /></div> */}
           <div className='sky-description'>{location.weather[0].description}</div>
         </div>
         <div className='sun'>
-          <div className='sunrise'>{convertTime(location.sys.sunrise) + 'AM'}</div>
-          <div className='sunset'>{convertTime(location.sys.sunset) + 'PM'}</div>
+          <div><WiSunrise /></div>
+          <div className='sunrise'>{convertTime(location.sys.sunrise, true) + ' AM'}</div>
+          <br></br>
+          <div><WiSunset /></div>
+          <div className='sunset'>{convertTime(location.sys.sunset, false) + ' PM'}</div>
         </div>
       </div>
     </div>
