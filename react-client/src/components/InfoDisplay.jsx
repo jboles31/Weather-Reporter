@@ -28,6 +28,8 @@ const InfoDisplay = ( props ) => {
       <div className='information'>
         <div className='temp-display'>
           <div className='temp-main'>{convertFaren(location.main.temp) + '˚'}</div>
+          <div className='temp-title'>Low</div>
+          <div className='temp-title'>High</div>
           <div className='temp-min'>{convertFaren(location.main.temp_min) + '˚'}</div>
           <div className='temp-max'>{convertFaren(location.main.temp_max) + '˚'}</div>
         </div>
