@@ -3,14 +3,14 @@ A single page web app that displays the weather for a desired location. Built wi
 
 ##### Author: *[Jordan Boles](https://github.com/jboles31)*
 
-### [Current Issues](./BUGS.md)
+### [Updates Coming](./BUGS.md)
+*  fetch and display more relevant weather data
+*  handle searching for cities without losing display
 
 ### Tech Stack
 * [React.js](https://reactjs.org/)
 * [Express](https://expressjs.com)
 * [Node.js](https://nodejs.org/en/)
-
-### [App Structure](./LAYOUT.md)
 
 ### How to Use
 
@@ -20,12 +20,8 @@ npm install
 ```
 * Build webpack bundle, and start development server
 ```bash
-npm run react:dev
-```
-* Run server
-```bash
-npm start
+npm run dev
 ```
 
-* Navigate to [http://localhost:3000](http://localhost:300)
+* Navigate to [http://localhost:3000](http://localhost:3000)
 
