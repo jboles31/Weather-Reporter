@@ -1,5 +1,5 @@
 import React from 'react'
-import { WiRain, WiSunrise, WiSunset } from 'react-icons/wi'
+import { WiDegrees, WiSunrise, WiSunset } from 'react-icons/wi'
 
 let convertFaren = (temp) => {
   return Math.round((((temp - 273.15) * 9)/ 5) + 32);
@@ -27,9 +27,9 @@ const InfoDisplay = ( props ) => {
       <div className='title'>{location.name}</div>
       <div className='information'>
         <div className='temp-display'>
-          <div className='temp-main'>{convertFaren(location.main.temp)}</div>
-          <div className='temp-min'>{convertFaren(location.main.temp_min)}</div>
-          <div className='temp-max'>{convertFaren(location.main.temp_max)}</div>
+          <div className='temp-main'>{convertFaren(location.main.temp) + '˚'}</div>
+          <div className='temp-min'>{convertFaren(location.main.temp_min) + '˚'}</div>
+          <div className='temp-max'>{convertFaren(location.main.temp_max) + '˚'}</div>
         </div>
         <div className='sky'>
           <div className='sky-main'>{location.weather[0].main}</div>
