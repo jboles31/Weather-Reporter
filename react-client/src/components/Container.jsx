@@ -1,6 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants'
+import { FaPlus } from 'react-icons/fa';
 
 const Container = (props) => {
 
@@ -16,10 +15,14 @@ const Container = (props) => {
     let result = [];
     props.cities.map(city => {
        result.push(
-        <div className='subContainer' key={'subContainer' + counter()} >{city.name}</div>
+        <div className='subContainer' key={'subContainer' + counter()} onClick={() => props.switchCity(city.name)}>{city.name}</div>
       );
     })
-    cityContainer.push(<div className='container'>{result}</div>);
+    cityContainer.push
+      (<div className='container'>
+        {result}
+        <div className='addCity' onClick={() => props.switchView()}><FaPlus /></div>
+      </div>);
     return cityContainer
   }
 

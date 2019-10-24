@@ -33,7 +33,6 @@ const InfoDisplay = ( props ) => {
         </div>
         <div className='sky'>
           <div className='sky-main'>{location.weather[0].main}</div>
-          {/* <div><WiRain /></div> */}
           <div className='sky-description'>{location.weather[0].description}</div>
         </div>
         <div className='sun'>

@@ -18,6 +18,8 @@ class App extends React.Component{
     }
 
     this.search = this.search.bind(this)
+    this.switchView = this.switchView.bind(this)
+    this.switchCity = this.switchCity.bind(this)
   }
 
   //use a react hook to count container scrolls and hold order
@@ -38,6 +40,18 @@ class App extends React.Component{
     })
   }
 
+  switchView() {
+    this.setState({
+      showView: false
+    })
+  }
+
+  switchCity(city) {
+    this.setState({
+      display: city
+    })
+  }
+
   render() {
     return (
       <div className="app-wrapper">
@@ -47,6 +61,8 @@ class App extends React.Component{
         <div className="comps-wrapper">
           <Container 
             cities={this.state.cities}
+            switchView={this.switchView}
+            switchCity={this.switchCity}
           />
           {this.state.showView ? 
             (<InfoDisplay 
