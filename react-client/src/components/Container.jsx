@@ -21,7 +21,7 @@ const Container = (props) => {
     cityContainer.push
       (<div className='container'>
         {result}
-        <div className='addCity' onClick={() => props.switchView()}><FaPlus /></div>
+        <div className='addCity' onClick={() => props.switchView(false)}><FaPlus /></div>
       </div>);
     return cityContainer
   }

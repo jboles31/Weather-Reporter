@@ -57,15 +57,23 @@ html, body {
         cursor: pointer;
       }
 
+      .subContainer:active {
+        box-shadow: 0px 0px 30px grey;
+      }
+
       .addCity {
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 3vh;
-        height: 25%;
+        height: 35%;
         margin-left: 1%;
         margin-right: 1%;
         cursor: pointer;
+      }
+
+      .addCity:hover {
+        font-size: 3.5vh;
       }
     }
   

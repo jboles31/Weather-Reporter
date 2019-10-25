@@ -40,9 +40,9 @@ class App extends React.Component{
     })
   }
 
-  switchView() {
+  switchView(boolean) {
     this.setState({
-      showView: false
+      showView: boolean
     })
   }
 
@@ -50,6 +50,7 @@ class App extends React.Component{
     this.setState({
       display: city
     })
+    this.switchView(true)
   }
 
   render() {
