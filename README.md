@@ -1,6 +1,10 @@
 # Weather-Reporter
 A single page web app that displays the weather for a desired location. Built with ReactJS
 
+##### LINK: [https://weather-reporter-31.herokuapp.com](https://weather-reporter-31.herokuapp.com)
+
+##### NOTE: It may take heroku 20 seconds or so for first load if it hasn't been viewed recently.
+
 ##### Author: *[Jordan Boles](https://github.com/jboles31)*
 
 ### [Updates Coming](./BUGS.md)
