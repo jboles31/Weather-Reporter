@@ -18,6 +18,6 @@ app.get('/api/:city', (req, res) => {
   })
 })
 
-app.listen(3000, function() {
+app.listen(8080, function() {
   console.log('listening on port 3000!');
 });
