@@ -9,8 +9,7 @@
     "dev:build": "webpack -d --watch",
     "dev:start": "nodemon server/index.js",
     "start": "node server/index.js",
-    "build": "webpack -d --watch",
-    "heroku-postbuild": "webpack -p"
+    "build": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
