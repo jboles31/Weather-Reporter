@@ -8,7 +8,8 @@
     "dev": "npm-run-all --parallel dev:*",
     "dev:build": "webpack -d --watch",
     "dev:start": "nodemon server/index.js",
-    "start": "nodemon server/index.js"
+    "start": "node server.js",
+    "heroku-postbuild": "webpack -p"
   },
   "repository": {
     "type": "git",
