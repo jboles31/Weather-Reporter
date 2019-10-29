@@ -5,6 +5,8 @@ A single page web app that displays the weather for a desired location. Built wi
 
 ##### NOTE: It may take heroku 20 seconds or so for first load if it hasn't been viewed recently.
 
+<img src="https://github.com/jboles31/Weather-Reporter/blob/master/WeatherDemo.gif" alt="CF-Demo" width="800" height="400">
+
 ##### Author: *[Jordan Boles](https://github.com/jboles31)*
 
 ### [Updates Coming](./BUGS.md)
