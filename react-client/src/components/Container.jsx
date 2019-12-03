@@ -3,25 +3,22 @@ import { FaPlus } from 'react-icons/fa';
 
 const Container = (props) => {
 
-  let count = 0
-  let counter = () => {
-    count =+ 1
-    return count;
-  }
-
   const containerGen = () => {
     let cityContainer = [];
 
     let result = [];
-    props.cities.map(city => {
+    props.cities.map((city, index) => {
        result.push(
-        <div className='subContainer' key={'subContainer' + counter()} onClick={() => props.switchCity(city.name)}>{city.name}</div>
+        <div className='subContainer' key={`${index}`} onClick={() => props.switchCity(city.name)}>
+          <div className="cityTitle">{city.name}</div>
+          <i className="fa fa-close" onClick={() => props.remove(city.name)}></i>
+        </div>
       );
     })
     cityContainer.push
       (<div className='container'>
         {result}
-        <div className='addCity' onClick={() => props.switchView(false)}><FaPlus /></div>
+        <div className='addCity' key='addCity' onClick={() => props.switchView(false)}><FaPlus /></div>
       </div>);
     return cityContainer
   }
