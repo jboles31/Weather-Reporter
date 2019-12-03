@@ -56,14 +56,16 @@ class App extends React.Component{
   }
 
   removeCity(cityName) {
-    // this.state.cities.forEach(city => {
-    //   if (city)
-    // })
-    
-    // this.setState ({
+    let citiesCopy = this.state.cities
+    citiesCopy.forEach((city, i) => {
+      if (city.name === cityName) {
+        citiesCopy = citiesCopy.splice(i, 1)
 
-    // })
-    console.log(this.state.cities[0])
+        this.setState ({
+          cities: citiesCopy
+        })
+      }
+    })
   }
 
   render() {
@@ -77,6 +79,7 @@ class App extends React.Component{
             cities={this.state.cities}
             switchView={this.switchView}
             switchCity={this.switchCity}
+            removeCity={this.removeCity}
           />
           {this.state.showView ? 
             (<InfoDisplay 
