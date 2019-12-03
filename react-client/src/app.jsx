@@ -20,6 +20,7 @@ class App extends React.Component{
     this.search = this.search.bind(this)
     this.switchView = this.switchView.bind(this)
     this.switchCity = this.switchCity.bind(this)
+    this.removeCity = this.removeCity.bind(this)
   }
 
   //use a react hook to count container scrolls and hold order
@@ -28,9 +29,10 @@ class App extends React.Component{
       method: 'GET',
       url: `/api/${param}`,
       success: (data) => {
+        const { name } = data;
         let copyState = this.state;
         copyState.cities.push(data);
-        copyState.display = data.name;
+        copyState.display = name;
         copyState.showView = true;
         this.setState(copyState)
       },
@@ -51,6 +53,17 @@ class App extends React.Component{
       display: city
     })
     this.switchView(true)
+  }
+
+  removeCity(cityName) {
+    // this.state.cities.forEach(city => {
+    //   if (city)
+    // })
+    
+    // this.setState ({
+
+    // })
+    console.log(this.state.cities[0])
   }
 
   render() {
