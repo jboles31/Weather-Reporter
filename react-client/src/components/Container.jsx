@@ -9,11 +9,12 @@ const Container = (props) => {
     let result = [];
     props.cities.map((city, index) => {
        result.push(
-        <div className='subContainer' key={`${index}`} onClick={() => props.switchCity(city.name)}>
+        <div className='subContainer' key={`${index}`} >
+          <div className="top-left-tile" onClick={() => props.switchCity(city.name)}></div>
           <div className="closeWrapper" onClick={() => props.removeCity(city.name)}>
             <i className="fa fa-close"></i>
           </div>
-          <div className="cityTitle">{city.name}</div>
+          <div className="majority-tile" onClick={() => props.switchCity(city.name)}>{city.name}</div>
         </div>
       );
     })
